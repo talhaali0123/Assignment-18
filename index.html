@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    // EVENTS
+
+    // 1.
+    
+    <a href="#" onclick="alert('You clicked the link!')">Click me</a>
+    
+    
+    // 2. 
+    
+    <img src="mobile1.jpg" alt="Mobile 1" onclick="alert('You clicked Mobile 1!')">
+    <img src="mobile2.jpg" alt="Mobile 2" onclick="alert('You clicked Mobile 2!')">
+    <img src="mobile3.jpg" alt="Mobile 3" onclick="alert('You clicked Mobile 3!')">
+    
+    
+    // 3.
+    
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>Mark</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <!-- Add 8 more rows similarly -->
+    </table>
+    
+    <script>
+    function deleteRow(button) {
+        let row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+    </script>
+    
+    
+    // 4.
+    
+    <img id="image" src="image1.jpg" onmouseover="changeImage()" onmouseout="resetImage()" alt="Image">
+    
+    <script>
+    function changeImage() {
+        document.getElementById('image').src = 'image2.jpg';
+    }
+    
+    function resetImage() {
+        document.getElementById('image').src = 'image1.jpg';
+    }
+    </script>
+    
+    
+    // 5.
+    
+    <p>Counter: <span id="counter">0</span></p>
+    <button onclick="increaseCounter()">Increase</button>
+    <button onclick="decreaseCounter()">Decrease</button>
+    
+    <script>
+    var counter = 0;
+    
+    function increaseCounter() {
+        counter++;
+        document.getElementById('counter').innerText = counter;
+    }
+    
+    function decreaseCounter() {
+        if (counter > 0) {
+            counter--;
+        }
+        document.getElementById('counter').innerText = counter;
+    }
+    </script>
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>
